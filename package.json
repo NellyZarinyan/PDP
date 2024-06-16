@@ -1,0 +1,26 @@
+{
+  "name": "pdp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "ts-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NellyZarinyan/PDP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NellyZarinyan/PDP/issues"
+  },
+  "homepage": "https://github.com/NellyZarinyan/PDP#readme"
+}
