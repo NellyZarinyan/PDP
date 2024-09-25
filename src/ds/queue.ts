@@ -8,23 +8,39 @@ export class Queue<T> {
           this.queue = Array(capacity);
      };
 
+     /**
+      * Returns true or false depending on lastIndex
+      * @returns true or false
+      */
      isEmpty() {
           return !this.lastIndex;
      };
 
+     /**
+      * Returns true or false depending on lastIndex and capacity
+      * @returns true or false
+      */
      isQueueOverflow(): boolean {
           return (this.lastIndex == this.capacity);
      }
 
-
-     enqueue(el: T): string {
+     /**
+      * To add an element
+      * @param element to add in queue
+      * @returns an added element
+      */
+     enqueue(element: T): string {
           if (this.isQueueOverflow()) {
                return 'Queue is overflow'
           }
-          this.queue[this.lastIndex++] = el;
-          return `${el} was added to queue`;
+          this.queue[this.lastIndex++] = element;
+          return `${element} was added to queue`;
      };
 
+     /**
+      * Removes an first added element
+      * @returns removed element
+      */
      dequeue(): string {
           if (this.isEmpty()) {
                return "Queue is empty. No item to remove.";
@@ -39,18 +55,29 @@ export class Queue<T> {
           return `The first element -> ${removedElement} was removed from queue`;
      };
 
+     /**
+      * Returns firts element
+      * @returns first elemnent
+      */
      frontElement() {
           if (this.isEmpty())
                return "Queue is empty";
           return ` The front element is ${this.queue[0]}`;
      };
 
+     /**
+      * Returns an last element
+      * @returns the last element
+      */
      lastIndexElement() {
           if (this.isEmpty())
                return "Queue is empty";
           return ` The lastIndex element is ${this.queue[this.lastIndex]}`;
      };
 
+     /**
+      * Printing queue
+      */
      printingQueue(): void {
           console.log('-----Printing queue-----');
           for (let i = 0; i < this.lastIndex; i++) {

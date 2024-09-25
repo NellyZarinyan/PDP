@@ -18,8 +18,8 @@ export class ArrayDs<T> {
     }
 
     /**
-     * Poping  
-     * @returns 
+     * Poping  the last element from array
+     * @returns deleted item
      */
     pop(): T | string {
         if (0 === this.length) return 'Array is empty';
@@ -33,14 +33,30 @@ export class ArrayDs<T> {
         return `${item} was deleted`
     }
 
+    /**
+     * Printing an array
+     * @returns array
+     */
     print() {
         console.log('-----Your array is-----')
         return this.data;
     }
 
+    /**
+     * Get an elment by given index
+     * @param index to get an element
+     * @returns an element by given index
+     */
     getByIndex(index: number): string | T {
         return `Element of ${index} index is ${this.data[index]}`;
     }
+
+    /**
+     * Insert an element by given index
+     * @param item to add in array
+     * @param index to add an item by given index
+     * @returns an item an given index
+     */
 
     insertAt(item: T, index: number) {
         const tmpData = new Array(++this.length);
@@ -57,6 +73,12 @@ export class ArrayDs<T> {
         return `${item} was added under ${index} index`;
     }
 
+
+    /**
+     * Delete an item by given index
+     * @param index to delet an item
+     * @returns an given index
+     */
     deleteAt(index: number) {
         const tmpData = new Array(--this.length);
         for (let i = 0, j = 0; i < this.data.length; i++, j++) {
@@ -70,4 +92,5 @@ export class ArrayDs<T> {
         return `Item with ${index} index was deleted`;
     }
 }
+
 
