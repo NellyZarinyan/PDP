@@ -8,6 +8,10 @@ export class Queue<T> {
           this.queue = Array(capacity);
      };
 
+     /**
+      * Returns true or false depending on lastIndex
+      * @returns 
+      */
      isEmpty() {
           return !this.lastIndex;
      };
