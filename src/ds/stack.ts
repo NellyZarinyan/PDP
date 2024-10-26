@@ -9,22 +9,39 @@ export class Stack<T> {
         this.stack = Array(capacity);
     }
 
+    /**
+     * Returns true or false depending on lastIndex
+     * @returns true or false
+     */
     isEmpty(): boolean {
         return (this.lastIndex < 0);
     }
 
-    isArrayOverflow(): boolean {
+    /**
+    * Returns true or false depending on lastIndex and capacity
+    * @returns true or false
+    */
+    isStackOverflow(): boolean {
         return (this.lastIndex + 1 == this.capacity);
     }
 
-    push(el: T): string {
-        if (this.isArrayOverflow()) {
+    /**
+     * Push an element to stack
+     * @param element to add in stack
+     * @returns an added element
+     */
+    push(element: T): string {
+        if (this.isStackOverflow()) {
             return 'Stack is full'
         }
-        this.stack[++this.lastIndex] = el;
-        return `${el} added in stack`;
+        this.stack[++this.lastIndex] = element;
+        return `${element} added in stack`;
     }
 
+    /**
+     * Returns an last added element
+     * @returns an removed element
+     */
     pop(): string {
         if (this.isEmpty()) {
             return "Stack is empty. No element to remove."
@@ -39,6 +56,10 @@ export class Stack<T> {
         return `The last element -> ${removedElement} was removed from stack`;
     }
 
+    /**
+     * Peek an last element
+     * @returns the last element
+     */
     peek() {
         if (this.isEmpty()) {
             return "Stack is empty. No element to peek."
@@ -46,6 +67,9 @@ export class Stack<T> {
         return this.stack[this.lastIndex];
     }
 
+    /**
+     * Printing stack
+     */
     printStack(): void {
         console.log('----Printing stack----');
         for (let i = 0; i < this.lastIndex + 1; i++) {
@@ -53,3 +77,4 @@ export class Stack<T> {
         }
     }
 }
+
