@@ -1,5 +1,5 @@
-function selectionSort(arr) {
-    let arrLength = arr.length;
+function selectionSort(arr: number[]): number[] {
+    const arrLength = arr.length;
 
     for (let i = 0; i < arrLength - 1; i++) {
         let minIndex = i;
@@ -11,15 +11,13 @@ function selectionSort(arr) {
         }
 
         if (minIndex !== i) {
-            let temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
+            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
         }
     }
 
     return arr;
 }
 
-let arr = [64, 25, 12, 22, 11];
-console.log("Unsorted :", arr);
+const arr = [64, 25, 12, 22, 11];
+console.log("Unsorted array:", arr);
 console.log("Sorted array:", selectionSort(arr));

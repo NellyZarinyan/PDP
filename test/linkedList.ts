@@ -11,7 +11,7 @@ linkedList.addElement(5);
 console.log('printing list')
 linkedList.printList();
 
-linkedList.removeEl(4);
+linkedList.removeElement(4);
 
 console.log('printing list')
 

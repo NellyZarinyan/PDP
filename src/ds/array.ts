@@ -22,10 +22,9 @@ export class ArrayDs<T> {
      * @returns deleted item
      */
     pop(): T | string {
-        if (0 === this.length) return 'Array is empty';
+        if (!this.length) return 'Array is empty';
         const item = this.data[this.length - 1];
-        this.length--;
-        const tmpData = new Array(this.length);
+        const tmpData = new Array(--this.length);
         for (let i = 0; i < tmpData.length; i++) {
             tmpData[i] = this.data[i];
         }
@@ -73,6 +72,23 @@ export class ArrayDs<T> {
         return `${item} was added under ${index} index`;
     }
 
+    /*
+     * Second method
+     */
+    // insertAt(item: T, index: number) {
+    //     const tmpData = new Array(++this.length);
+    //     for (let i = 0; i < tmpData.length; i++) {
+    //         if (i < index) {
+    //             tmpData[i] = this.data[i];
+    //         } else if (i == index) {
+    //             tmpData[i] = item;
+    //         } else {
+    //             tmpData[i] = this.data[i - 1];
+    //         }
+    //     }
+    //     this.data = tmpData;
+    //     return `${item} was added under ${index} index`;
+    // }
 
     /**
      * Delete an item by given index

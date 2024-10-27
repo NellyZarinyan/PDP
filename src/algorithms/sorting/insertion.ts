@@ -1,7 +1,7 @@
-function insertionSort(arr) {
+function insertionSort(arr: number[]) {
 
     for (let i = 1; i <  arr.length; i++) {
-        let key = arr[i];
+        const key = arr[i];
         let j = i - 1;
 
         while (j >= 0 && arr[j] > key) {
@@ -14,6 +14,6 @@ function insertionSort(arr) {
     return arr;
 }
 
-let arr1 = [64, 25, 12, 22, 11];
+const arr1 = [64, 25, 12, 22, 11];
 console.log("Unsorted array:", arr1);
 console.log("Sorted array:", insertionSort(arr1));

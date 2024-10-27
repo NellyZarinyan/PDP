@@ -1,4 +1,4 @@
-import {ArrayDs} from '.././src/ds/array'
+import {ArrayDs} from '../src/ds/array'
 
 const testArray = new ArrayDs()
 
